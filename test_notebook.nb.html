@@ -233,7 +233,8 @@ pre code {
 <p>Add a new chunk by clicking the <em>Insert Chunk</em> button on the toolbar or by pressing <em>Ctrl+Alt+I</em>.</p>
 <p>When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the <em>Preview</em> button or press <em>Ctrl+Shift+K</em> to preview the HTML file).</p>
 <p>The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike <em>Knit</em>, <em>Preview</em> does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.</p>
-<p>Topic 5.1 - Object &amp; Numbers</p>
+<div id="topic-5.1---object-numbers" class="section level1">
+<h1>Topic 5.1 - Object &amp; Numbers</h1>
 <ul>
 <li>Default type for number is Numeric to make type “int” use L</li>
 <li>Can’t use L with Real Numbers -&gt; 1.1 2.3 etc</li>
@@ -276,10 +277,29 @@ class(e)</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
-<p>Topic 5.2 - Attributes &amp; Evaluation</p>
+</div>
+<div id="topic-5.2---attributes-evaluation" class="section level1">
+<h1>Topic 5.2 - Attributes &amp; Evaluation</h1>
+<p>R Objects can have attributes - names, dimmnames - dimensions (e.g. matrices, arrays) - class, length, other user-defined attributes/metadata Attributes of an object can be accessed using the attributes() function</p>
+<p>Both ‘=’ &amp; ‘&lt;-’ are assignment operators</p>
+<ul>
+<li>: is used to print series 1:5 (Initial value : End Value) mean 1 to 5</li>
+</ul>
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYSA9IDE6NVxucHJpbnQoYSlcbmBgYCJ9 -->
+<pre class="r"><code>a = 1:5
+print(a)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEgMiAzIDQgNVxuIn0= -->
+<pre><code>[1] 1 2 3 4 5</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+</div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQphdXRob3I6ICJIYW16YSBSYXNoaWQiDQplbWFpbCA6ICJib2xkZHVza0BnbWFpbC5jb20iDQpkZXNjcmlwdGlvbiA6ICJUaGlzIG5vdGVib29rIGlzIGZvciBsZWFybmluZyINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNClRoaXMgaXMgYW4gW1IgTWFya2Rvd25dKGh0dHA6Ly9ybWFya2Rvd24ucnN0dWRpby5jb20pIE5vdGVib29rLiBXaGVuIHlvdSBleGVjdXRlIGNvZGUgd2l0aGluIHRoZSBub3RlYm9vaywgdGhlIHJlc3VsdHMgYXBwZWFyIGJlbmVhdGggdGhlIGNvZGUuIA0KDQpUcnkgZXhlY3V0aW5nIHRoaXMgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpSdW4qIGJ1dHRvbiB3aXRoaW4gdGhlIGNodW5rIG9yIGJ5IHBsYWNpbmcgeW91ciBjdXJzb3IgaW5zaWRlIGl0IGFuZCBwcmVzc2luZyAqQ3RybCtTaGlmdCtFbnRlciouIA0KDQpgYGB7cn0NCnByaW50KCJoZWxsbyIpDQoNCmBgYA0KQWRkIGEgbmV3IGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqSW5zZXJ0IENodW5rKiBidXR0b24gb24gdGhlIHRvb2xiYXIgb3IgYnkgcHJlc3NpbmcgKkN0cmwrQWx0K0kqLg0KDQpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkN0cmwrU2hpZnQrSyogdG8gcHJldmlldyB0aGUgSFRNTCBmaWxlKS4NCg0KVGhlIHByZXZpZXcgc2hvd3MgeW91IGEgcmVuZGVyZWQgSFRNTCBjb3B5IG9mIHRoZSBjb250ZW50cyBvZiB0aGUgZWRpdG9yLiBDb25zZXF1ZW50bHksIHVubGlrZSAqS25pdCosICpQcmV2aWV3KiBkb2VzIG5vdCBydW4gYW55IFIgY29kZSBjaHVua3MuIEluc3RlYWQsIHRoZSBvdXRwdXQgb2YgdGhlIGNodW5rIHdoZW4gaXQgd2FzIGxhc3QgcnVuIGluIHRoZSBlZGl0b3IgaXMgZGlzcGxheWVkLg0KDQpUb3BpYyA1LjEgLSBPYmplY3QgJiBOdW1iZXJzDQoNCiAtIERlZmF1bHQgdHlwZSBmb3IgbnVtYmVyIGlzIE51bWVyaWMgdG8gbWFrZSB0eXBlICJpbnQiIHVzZSBMDQogLSBDYW4ndCB1c2UgTCB3aXRoIFJlYWwgTnVtYmVycyAtPiAxLjEgIDIuMyBldGMNCiANCmBgYHtyfQ0KYSA9IDUNCmNsYXNzKGEpDQoNCmIgPSA1TA0KY2xhc3MoYikNCg0KYyA9IDUuNUwNCg0KZCA9IDEvSW5mDQpwcmludChkKQ0KDQplID0gTmFODQpjbGFzcyhlKQ0KDQoNCmBgYA0KDQpUb3BpYyA1LjIgLSBBdHRyaWJ1dGVzICYgRXZhbHVhdGlvbg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2siDQphdXRob3I6ICJIYW16YSBSYXNoaWQiDQplbWFpbCA6ICJib2xkZHVza0BnbWFpbC5jb20iDQpkZXNjcmlwdGlvbiA6ICJUaGlzIG5vdGVib29rIGlzIGZvciBsZWFybmluZyINCm91dHB1dDogaHRtbF9ub3RlYm9vaw0KLS0tDQoNClRoaXMgaXMgYW4gW1IgTWFya2Rvd25dKGh0dHA6Ly9ybWFya2Rvd24ucnN0dWRpby5jb20pIE5vdGVib29rLiBXaGVuIHlvdSBleGVjdXRlIGNvZGUgd2l0aGluIHRoZSBub3RlYm9vaywgdGhlIHJlc3VsdHMgYXBwZWFyIGJlbmVhdGggdGhlIGNvZGUuIA0KDQpUcnkgZXhlY3V0aW5nIHRoaXMgY2h1bmsgYnkgY2xpY2tpbmcgdGhlICpSdW4qIGJ1dHRvbiB3aXRoaW4gdGhlIGNodW5rIG9yIGJ5IHBsYWNpbmcgeW91ciBjdXJzb3IgaW5zaWRlIGl0IGFuZCBwcmVzc2luZyAqQ3RybCtTaGlmdCtFbnRlciouIA0KDQpgYGB7cn0NCnByaW50KCJoZWxsbyIpDQoNCmBgYA0KQWRkIGEgbmV3IGNodW5rIGJ5IGNsaWNraW5nIHRoZSAqSW5zZXJ0IENodW5rKiBidXR0b24gb24gdGhlIHRvb2xiYXIgb3IgYnkgcHJlc3NpbmcgKkN0cmwrQWx0K0kqLg0KDQpXaGVuIHlvdSBzYXZlIHRoZSBub3RlYm9vaywgYW4gSFRNTCBmaWxlIGNvbnRhaW5pbmcgdGhlIGNvZGUgYW5kIG91dHB1dCB3aWxsIGJlIHNhdmVkIGFsb25nc2lkZSBpdCAoY2xpY2sgdGhlICpQcmV2aWV3KiBidXR0b24gb3IgcHJlc3MgKkN0cmwrU2hpZnQrSyogdG8gcHJldmlldyB0aGUgSFRNTCBmaWxlKS4NCg0KVGhlIHByZXZpZXcgc2hvd3MgeW91IGEgcmVuZGVyZWQgSFRNTCBjb3B5IG9mIHRoZSBjb250ZW50cyBvZiB0aGUgZWRpdG9yLiBDb25zZXF1ZW50bHksIHVubGlrZSAqS25pdCosICpQcmV2aWV3KiBkb2VzIG5vdCBydW4gYW55IFIgY29kZSBjaHVua3MuIEluc3RlYWQsIHRoZSBvdXRwdXQgb2YgdGhlIGNodW5rIHdoZW4gaXQgd2FzIGxhc3QgcnVuIGluIHRoZSBlZGl0b3IgaXMgZGlzcGxheWVkLg0KDQojIFRvcGljIDUuMSAtIE9iamVjdCAmIE51bWJlcnMNCg0KIC0gRGVmYXVsdCB0eXBlIGZvciBudW1iZXIgaXMgTnVtZXJpYyB0byBtYWtlIHR5cGUgImludCIgdXNlIEwNCiAtIENhbid0IHVzZSBMIHdpdGggUmVhbCBOdW1iZXJzIC0+IDEuMSAgMi4zIGV0Yw0KIA0KYGBge3J9DQphID0gNQ0KY2xhc3MoYSkNCg0KYiA9IDVMDQpjbGFzcyhiKQ0KDQpjID0gNS41TA0KDQpkID0gMS9JbmYNCnByaW50KGQpDQoNCmUgPSBOYU4NCmNsYXNzKGUpDQoNCg0KYGBgDQoNCiMgVG9waWMgNS4yIC0gQXR0cmlidXRlcyAmIEV2YWx1YXRpb24NCg0KUiBPYmplY3RzIGNhbiBoYXZlIGF0dHJpYnV0ZXMNCiAtIG5hbWVzLCBkaW1tbmFtZXMgDQogLSBkaW1lbnNpb25zIChlLmcuIG1hdHJpY2VzLCBhcnJheXMpDQogLSBjbGFzcywgbGVuZ3RoLCBvdGhlciB1c2VyLWRlZmluZWQgYXR0cmlidXRlcy9tZXRhZGF0YQ0KQXR0cmlidXRlcyBvZiBhbiBvYmplY3QgY2FuIGJlIGFjY2Vzc2VkIHVzaW5nIHRoZSBhdHRyaWJ1dGVzKCkgZnVuY3Rpb24NCg0KQm90aCAnPScgJiAnPC0nIGFyZSBhc3NpZ25tZW50IG9wZXJhdG9ycw0KDQogLSA6IGlzIHVzZWQgdG8gcHJpbnQgc2VyaWVzIDE6NSAoSW5pdGlhbCB2YWx1ZSA6IEVuZCBWYWx1ZSkgbWVhbiAxIHRvIDUNCiANCmBgYHtyfQ0KYSA9IDE6NQ0KcHJpbnQoYSkNCmBgYA0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0K</div>
 
 
 
