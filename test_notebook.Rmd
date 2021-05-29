@@ -114,8 +114,9 @@ class(c)
 d <- c("a","b","c")
 e
 e = as.numeric(d)
-
-
+print("")
+f = as.complex(d)
+f
 
 ```
 
