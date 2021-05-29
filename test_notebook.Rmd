@@ -20,7 +20,7 @@ When you save the notebook, an HTML file containing the code and output will be 
 
 The preview shows you a rendered HTML copy of the contents of the editor. Consequently, unlike *Knit*, *Preview* does not run any R code chunks. Instead, the output of the chunk when it was last run in the editor is displayed.
 
-Topic 5.1 - Object & Numbers
+# Topic 5.1 - Object & Numbers
 
  - Default type for number is Numeric to make type "int" use L
  - Can't use L with Real Numbers -> 1.1  2.3 etc
@@ -43,14 +43,81 @@ class(e)
 
 ```
 
-Topic 5.2 - Attributes & Evaluation
+# Topic 5.2 - Attributes & Evaluation
+
+R Objects can have attributes
+ - names, dimmnames 
+ - dimensions (e.g. matrices, arrays)
+ - class, length, other user-defined attributes/metadata
+Attributes of an object can be accessed using the attributes() function
+
+Both '=' & '<-' are assignment operators
+
+ - : is used to print series 1:5 (Initial value : End Value) mean 1 to 5
+ 
+```{r}
+a = 1:5
+print(a)
+```
+# Topic 5.3 - Vectors & Corecion
+
+Creating Vectors
+ - c() function can be used to create vectors
+  - x <- c(1,2), x <- c(0.4,0.6)
+ - vector("numeric", length = 10)
+
+```{r}
+a <- c (0.5,0.6)
+a
+b <- c(TRUE,FALSE,TRUE)
+b
+c <- c("a","b","d")
+c
+d <- 8:20
+d
+e <- c(1+0i,2+5i)
+e
+```
+When different objects are mixed in a vector, coercion occurs so that every element in the vector is of the same class.
+When compiler change Data Type it is called coercion
+
+```{r}
+a <- c(3.4,"b")
+a
+class(a)
+
+b <- c(TRUE,FALSE,1,5)
+b
+class(b)
+
+c <- c("a",TRUE,FALSE,5,8,"d")
+c
+class(c)
+```
+
+Explicit Coercion
+
+```{r}
+a <- -1:5
+a
+class(a)
+
+b = as.numeric(a)
+b
+class(b)
+
+c = as.logical(a)
+# Only 0 is False all other numbers are considered TRUE
+c
+class(c)
+
+d <- c("a","b","c")
+e
+e = as.numeric(d)
 
 
 
-
-
-
-
+```
 
 
 
