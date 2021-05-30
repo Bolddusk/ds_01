@@ -120,6 +120,44 @@ f
 
 ```
 
+# Topic 5.4 - Matrices
+
+Matrices are vectors with dimension attribute. The dimension attribute itself is an integer vector length of 2 (nrow,ncol)
+ - matrix(3,4) means 1 column with 4 rows of 3
+
+```{r}
+a <- matrix(3,4)
+a
+dim(a)
+b <- matrix(ncol = 3,nrow = 4)
+b
+dim(b)
+attributes(b)
+```
+
+Assignment of data will be column wise
+ - Data should be multiple of nrow
+ - if data is less than the matrix it'll again start from the begining
+```{r}
+a = matrix(1:6,ncol = 3,nrow = 3)
+a
+
+b = matrix(8:16,nrow = 3,ncol = 4)
+b
+```
+Other way to make matrices
+ - create vector first then assign dimensions it'll create matrix
+ - When using dim() function nrow*ncol= total numbers 
+```{r}
+a <- 1:10
+a
+dim(a) <- c(5,2)
+a
+b <- 10:19
+b
+dim(b) <- c(2,5)
+b
+```
 
 
 
