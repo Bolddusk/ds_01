@@ -185,11 +185,26 @@ a
 # We can access the specific element with index list[index number] etc a[3]
 a[4]
 ```
+# Topic 5.6 Factors
 
-
-
-
-
+Factors are use to represent categorical data.Factors can be ordered and un-ordered. On can think of a factor as an integer vector where each integer has label.
+ - Factors are treated specially by modelling functions like lm() and glm().
+ - Using factors with labels is BETTER than using integers because factors are self describing; Having a variable
+   that has values "Male" and "Female" is better than a variable that has values 1 and 2.
+ - Levels will be sorted in Ascending Order
+ - To set Levels order for Factor use "Level()" function
+```{r}
+a <- factor(c("Male","Female","Female","Female","Male","Female","Male","Male","Male"))
+a
+# table will show count for each level
+table(a)
+#unclass will show back-end values which are stored for data
+unclass(a)
+print("__________")
+week = factor(c("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"),levels = c("Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"))
+#If levels are not defined it'll show days by Ascending Order Friday,Monday etc
+week
+```
 
 
 
