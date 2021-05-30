@@ -137,7 +137,7 @@ attributes(b)
 
 Assignment of data will be column wise
  - Data should be multiple of nrow
- - if data is less than the matrix it'll again start from the begining
+ - if data is less than the matrix it'll again start from the beginning
 ```{r}
 a = matrix(1:6,ncol = 3,nrow = 3)
 a
@@ -159,6 +159,32 @@ dim(b) <- c(2,5)
 b
 ```
 
+# Topic 5.5 - Binding & List
+
+cbind-ing and rbind-ing
+Matrices can be created by column-binding or row-binding with cbind() and rbind().
+ - Size should be same of the values to be attached
+ - If it isn't same it'll again start the range from beginning which is less
+```{r}
+a <- 1:3
+b <- 20:22
+cbind(a,b)
+
+# length of D not equals to D
+c = 1:4
+C = 1:5
+d = 10:15
+rbind(c,d)
+
+```
+Lists
+ - Lists are special type of vector that can contain different type of classes.
+```{r}
+a <- list(1,TRUE,"Hello I'm List",8,'a')
+a
+# We can access the specific element with index list[index number] etc a[3]
+a[4]
+```
 
 
 
