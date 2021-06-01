@@ -102,11 +102,45 @@ Subsetting Nested Elements of lists
 ```{r}
 a <- list(a = list(10,11,12), b = c(3.14,2.81))
 a[1]
-print("First List and 2nd element")
-a[[c(1,2)]]
+print("First List and 3nd element")
+a[[c(1,3)]]
+print("2nd list and 2nd element")
+a[[c(2,2)]]
+print("2nd list and 2 element using [[]]")
+a[[2]][[2]]
+```
+# Topic 7.3 - Removing NA Values
+
+```{r}
+a <- c(1,2,NA,4,NA,3,NA)
+a
+b <- is.na(a)
+b
+print("Removing NA Values")
+c = a[!b]
+c
+```
+Using complete.cases()
+ - all lists passes in complete.cases should have same length and NA Values
+```{r}
+a <- c(1,3,NA,4,5,NA,NA,6)
+b <- c("a",NA,"b","c","d",NA,NA,"e")
+good <- complete.cases(a,b)
+good
+
+a[good]
+b[good]
+```
+Air Quality data 
+```{r}
+a <- airquality[1:6,]
+a
+# View(a) it'll show the values in Table
+print("Row 5 & 6 contains NA Values they're skipped after using complete.cases() on it")
+good <- complete.cases(airquality)
+airquality[good,][1:6,]
 ```
 
- 
  
  
  
