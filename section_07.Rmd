@@ -60,8 +60,52 @@ e
 
 
 ```
-
+# Topic 7.2 - Subsetting Lists
+ - access list in lists using index a[1] first list
+ - a[1] list with name
+ - a["list Name"] list with name
  
+ - a[[1]] list without name
+ - a[["list name"]] list without name
+ - a$list_name list without name
+```{r}
+a <- list(weekday= 1:4,rain_prob=0.6)
+#with names
+a[1]
+a["rain_prob"]
+
+#without names
+a[[1]]
+
+a$weekday
+a[["rain_prob"]]
+```
+```{r}
+a <- list(weekday=1:4,rain_prob=0.6,item="Umbrella")
+a
+print("------")
+b = a[c(1,3)]
+b
+```
+ The [[ Operator can be used with Computed indices; $ can only be used literal names 
+```{r}
+a <- list(weekday = 1:4,rain_prob=0.6,item="Umbrella")
+a
+
+name <- "weekday"
+a[name]
+
+a$weekday
+```
+ 
+Subsetting Nested Elements of lists
+```{r}
+a <- list(a = list(10,11,12), b = c(3.14,2.81))
+a[1]
+print("First List and 2nd element")
+a[[c(1,2)]]
+```
+
  
  
  
