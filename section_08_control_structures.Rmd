@@ -1,0 +1,84 @@
+---
+title: "R Notebook"
+author: "Hamza Rashid"
+email : "bolddusk@gmail.com"
+description : "This notebook is for learning"
+output: html_notebook
+---
+# Control Structures
+# Topic 8.1 - If Else
+
+Control structures in R allow you to control the flow of execution of the program, depending on runtime conditions.
+Common structures are:
+
+ - if, else: testing a condition
+ - for: execute a loop fixed number of times
+ - while: execute a loop while a condition is true.
+ - repeat: execute an infinite loop.
+ - break: break the execution of loop.
+ - next: skip an interaction o loop.
+ - return: exit a function.
+ 
+- Most control structures are not used in interactive sessions, but rather when writing functions or longer expressions.
+
+```{r}
+a <- 4
+b <- 5
+a
+b
+if(a > 4){
+  b = 8
+}else{
+  b = -4
+}
+a
+b
+c <- if(a > 4){ 100 }else{-100}
+c
+```
+# Topic 8.2 - For Loop
+
+for loops take an iterative variable and assign it successive values from a sequence or vector.for loops are most used for iterating over the elements of an object(list, vector, etc.).
+```{r}
+for(i in 1:5){
+  print(i)
+}
+
+a = c("a","b","c","d","e")
+for(i in a){
+  print(i)
+}
+
+print("using seq_along")
+for( i in seq_along(a)){
+  print(a[i])
+}
+
+print("single line loop")
+for(i in 1:4) print(a[i])
+```
+Nested Loop
+```{r}
+a <- matrix(1:12,3,4)
+a
+print("Printing a row wise")
+for(i in seq_len(nrow(a))){
+  for(j in seq_len(ncol(a))){
+    print(a[i,j])
+  }
+}
+```
+
+# Topic 8.3 - While Loop
+
+
+
+
+
+
+
+
+
+
+
+
