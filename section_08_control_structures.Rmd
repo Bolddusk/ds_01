@@ -71,7 +71,27 @@ for(i in seq_len(nrow(a))){
 
 # Topic 8.3 - While Loop
 
-
+While loops begin by testing the condition. If it is true, then they execute the loop body.Once the loop is executed, the condition is tested again, and so forth.
+```{r}
+count <- 0
+while(count < 5){
+  print(count)
+  count = count+1
+}
+```
+```{r}
+a <- 5
+while (a >=3 && a <=8){
+  print(a)
+  coin <- rbinom(1,1,0.5)
+  if(coin == 1){
+    a <- a+1
+  }else{
+    a <- a-1
+  }
+}
+```
+ 
 
 
 
