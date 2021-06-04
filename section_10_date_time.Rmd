@@ -1,0 +1,117 @@
+---
+title: "R Notebook"
+author: "Hamza Rashid"
+email : "bolddusk@gmail.com"
+description : "This notebook is for learning"
+output: html_notebook
+---
+
+# Dates and Times in R
+
+R has developed special representation of dates and times;
+ - Dates are represented by the Date class.
+ - Times are represent by the POSIXct or the POSIXlt class.
+ - Dates are stored internally as the number of days since 1970-01-01.
+ - Times are stored internally as the number of seconds since 1970-01-01.
+ 
+ 
+Dates in R
+
+Dates are represented by the Date class and can be coerced by from a character
+string using th as.Date() function.
+```{r}
+a = as.Date("2021-01-01")
+a
+
+b = as.POSIXct("1970-01-01")
+b
+
+c = as.POSIXlt("1970-01-01")
+c
+```
+Times are represented using the POSIXct or the POSIXclt class.
+  - POSIXct is just a very large integer under the hood; it is useful class when
+    class when you want to store times in something like data frame.
+  - POSIXlt is a list underneath and it stores a bunch of other useful 
+    information like day of the week, day of the year,month, day of the month
+    etc.
+  
+There are few generic functions what work on Date on Times.
+ - weedays: give the day of the week.
+ - months: give the month name.
+ - quarters: give the quarter number ("Q1","Q2","Q3","Q4").
+ 
+ 
+ Times can coerced from a character string using the as.POSIXlt or POSIXct
+ funtion.
+```{r}
+a <- Sys.time()
+a
+
+psx = as.POSIXlt(a)
+psx
+
+names(unclass(psx))
+
+psx$sec
+psx$wday
+
+pct = as.POSIXct(a)
+pct
+```
+ 
+There is 'strptime()' function in case your dates are written in a different format.
+- ?strptime if you don't remember formatting string
+```{r}
+datestring <- c("January 10, 2021 10:40","December 10, 2021 11:40")
+a <- strptime(datestring, "%B %d, %Y %H:%M")
+a
+
+```
+Operations on Dates and Times
+Mathematical operations can be used on Dates & Times.
+```{r}
+a <- as.Date("2021-05-06")
+b <- strptime("10 Jan 2021 11:10:20", "%d %b %Y %H:%M:%S")
+#a-b
+class(a)
+class(b)
+a <- as.POSIXct(a)
+a-b
+```
+```{r}
+a <- as.Date("2012-03-01")
+b <- as.Date("2012-04-25")
+a-b
+
+# Example of Time difference
+c <- as.POSIXct("2012-10-25 10:00:00")
+d <- as.POSIXct("2012-10-25 16:20:00")
+d-c
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
