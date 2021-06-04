@@ -1,0 +1,152 @@
+---
+title: "R Notebook"
+author: "Hamza Rashid"
+email : "bolddusk@gmail.com"
+description : "This notebook is for learning"
+output: html_notebook
+---
+
+# Looping on the Command Line
+
+Writing for, while loops is useful when programming but not particularly easy 
+when working interactively on command line for data sets. There are some 
+functions which implement looping to make life easier.
+ - lapply: Loop over a list and evaluate a function on each element
+ - sapply: Same as lapply but try to simplify the result.
+ - apply: apply a function over the margin of an array.
+ - tapply: apply a function over subsets of a vector.
+ - mapply: Multivariate version of lapply.
+ - An auxiliary function 'split' is also useful, particularly in conjunction 
+    with 'lapply'.
+    
+lapply
+ Apply loop on a list(lapply)
+ lapply takes three arguments
+ 1- a list X;
+ 2- a function (or the name of the function) FUN;
+ 3- other arguments via its ... argument.
+ 
+ If X is not a list, it will coerced to a list using as.list
+ The acual looping is done internally in C code.
+```{r}
+a <- list(a=1:5, b=rnorm(10))
+a
+print("applying lapply with mean")
+lapply(a,mean)
+
+print("Seprately calculating mean")
+mean(a$a)
+
+# new list
+b = list(a=1:4,b = rnorm(10),c=rnorm(20,1),d=rnorm(100,5))
+print("List B")
+lapply(b,mean)
+```
+ 
+```{r}
+# random unified runif
+a <- 1:5
+lapply(a, runif)
+```
+ 
+# Topic 13.2 - Loop Sappy
+
+sapply will try to simplify the result of lapply if possible.
+ - if the result is list where every element is length 1, then a vector is 
+    returned.
+ - if the result is list where every element is a vector of the same length (>1)
+    ,a matrix is returned.
+ - if it can't figure things out, a list is returned.
+```{r}
+a <- list(a= 1:4, b = rnorm(10), c= rnorm(20,1), d= rnorm(100,5))
+
+result_mean = sapply(a,mean)
+result_mean
+
+
+result_sum = sapply(a,sum)
+print("result_sum")
+result_sum
+```
+# Topic 13.3 - Loop appy
+
+apply is used to evaluate function (often an anonymous one) over the margins
+of an array
+ - It is most often used to apply a function to the rows or columns of a matrix.
+ - It can be used with general arrays, e.g. taking an average of an array of 
+    matrices.
+ - It is not really  faster than writing a loop, but it works in one line!
+ 
+str(apply)
+function(X,MARGIN, FUN,...)
+ - X is an array.
+ - MARGIN is an integer vector indicating which margins should be "retained". 
+  - Only Rows & Columns
+ - FUN is function to be applied.
+ - ... is for other arguments to be passed to FUN.
+ 
+```{r}
+a <- matrix(rnorm(100,20,10))
+result_mean = apply(a, 2,mean)
+result_mean
+
+
+result_sum = apply(a,2,sum)
+print("sum result")
+result_sum
+
+```
+ 
+ col/row sum and mean
+ For sums and means of matrix dimensions, we have some shortcuts
+  - rowSums = apply(x, 1, sum)
+  - rowMeans = apply(x, 1, mean)
+  - colSums = apply(x, 2, sum)
+  - colMeans = apply(x, 2, mean)
+```{r}
+a <- matrix(1:10,5,2)
+a
+print("rowSums")
+rowSums(a)
+print("colSums")
+colSums(a)
+
+b <- matrix(rnorm(200),20,10)
+print("Other way to use apply ")
+apply(b, 1, quantile, probs = c(0.25,0.75) )
+```
+ 
+ 
+# Topic 13.4 - tapply
+  tapply is used to apply a function over the subsets of a vector
+  str(tapply)
+  function(X, INDEX, FUN = NULL, ..., simplify = TRUE)
+  - X is a vector.
+  - INDEX is a factor or a list of factors (or else they are coerced to factors)
+  - FUN is a function to be applied.
+  - ... contains other arguments be passed to FUN
+```{r}
+a <- c(rnorm(10), runif(10), rnorm(10,1))
+a
+b <- gl(3, 10)
+b
+
+tapply(a,b,mean)
+```
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
